@@ -1,7 +1,30 @@
-@charset 'utf-8';
-.navbar-inverse .container .navbar-header .navbar-brand {
+.navbar-inverse .navbar-nav > li > a {
   color: #fff;
 }
-.navbar-inverse .container .navbar-collapse .navbar-nav li a {
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #00a8ff;
+  text-decoration: underline;
+}
+.navbar-inverse .navbar-brand {
   color: #fff;
+  font-size: 18px;
+  padding: 14px 15px;
+}
+.navbar-inverse .navbar-brand i {
+  font-size: 24px;
+}
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+  line-height: 60px;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+.navbar-brand {
+  padding: 24px 15px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #00a8ff;
+  background-color: #efefef;
 }

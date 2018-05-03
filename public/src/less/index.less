@@ -1,24 +1,46 @@
-@charset 'utf-8';
-// 公共变量
-@colorFff: #fff;
+//公共变量
+@colorWhite: #fff;
 @font18: 18px;
 @font24: 24px;
-// 页头导航条样式
-.navbar-inverse {
-    .container {
-        .navbar-header {
-            .navbar-brand {
-                color: @colorFff;
-            }
-        }
-        .navbar-collapse {
-            .navbar-nav {
-                li {
-                    a {
-                        color: @colorFff;
-                    }
-                }
-            }
-        }
-    }
+@font16: 16px;
+@colorHoverBlue: #00a8ff;
+//顶部导航条
+.navbar-inverse .navbar-nav>li>a {
+    color: @colorWhite;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: @colorHoverBlue;
+    text-decoration: underline;
+}
+
+//顶部电话
+.navbar-inverse .navbar-brand {
+    color: @colorWhite;
+    font-size: @font18; // font-style: italic;
+    padding: 14px 15px;
+}
+
+.navbar-inverse .navbar-brand i {
+    font-size: @font24;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+//主导航条样式
+.navbar-default .navbar-nav>li>a {
+    line-height: 60px;
+    font-size: @font16;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    padding: 24px 15px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: @colorHoverBlue;
+    background-color: #efefef;
 }

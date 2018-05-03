@@ -1,9 +1,32 @@
 //公共变量
 @colorWhite: #fff;
+@color999: #999;
 @font18: 18px;
 @font24: 24px;
 @font16: 16px;
 @colorHoverBlue: #00a8ff;
+//重置样式
+li {
+    list-style: none;
+}
+
+// 公共样式
+.cl {
+    clear: both;
+}
+
+.clear:after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+}
+
+.text-bule {
+    color: #31708f;
+}
+
 //顶部导航条
 .navbar-inverse .navbar-nav>li>a {
     color: @colorWhite;
@@ -44,10 +67,121 @@
     color: @colorHoverBlue;
     background-color: #efefef;
 }
+
 //轮播
 .container-fuil {
     .carousel {
         margin-top: 8px;
         margin-bottom: 8px;
+    }
+}
+
+//项目特色
+.el-feature {
+    height: 80px;
+    margin-top: 20px;
+    .el-feature-item01 {
+        background: url(../../images/feature01.png) no-repeat;
+    }
+    .el-feature-item02 {
+        background: url(../../images/feature02.png) no-repeat;
+    }
+    .el-feature-item03 {
+        background: url(../../images/feature03.png) no-repeat;
+    }
+    dl {
+        padding-left: 80px;
+        float: left;
+        width: 33%;
+        dt {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        dd {
+            color: @color999;
+        }
+    }
+}
+
+//投资列表
+.el-panel {
+    .panel {
+        box-shadow: none;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        .panel-title {
+            font-size: 24px;
+            color: #2e8ece;
+            font-weight: bold;
+            border-bottom: 1px solid #e8e8e8;
+            margin: 10px 0px 16px;
+            span {
+                border-bottom: 3px solid;
+            }
+        }
+        .el-table {
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+            thead {
+                tr {
+                    th {
+                        vertical-align: bottom;
+                        border-bottom: 2px solid #ddd;
+                        color: @color999;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        font-size: 16px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//咨询
+.el-new-list {
+    ul {
+        padding: 0;
+        li {
+            line-height: 38px;
+            font-size: 14px;
+            border-bottom: 1px dotted #eee;
+            a {
+                color: #555;
+            }
+            a:hover {
+                color: #09d;
+            }
+        }
+    }
+}
+
+//页脚
+.el-footer {
+    background-color: #f8f8f8;
+    margin: 20px 0px 20px 0px;
+    padding-top: 30px;
+    .container {
+        .col-sm-2 {
+            div {
+                p {
+                    padding-bottom: 15px;
+                    font-size: 14px;
+                    padding-left: 10px;
+                }
+                a {
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
     }
 }

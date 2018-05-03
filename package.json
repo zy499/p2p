@@ -21,6 +21,9 @@
     "gulp-less": "^4.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^3.0.0"
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "mongoose": "^5.0.17"
   }
 }

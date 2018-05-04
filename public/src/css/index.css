@@ -86,6 +86,11 @@ li {
     height: 68px;
   }
 }
+@media all and (max-width: 630px) {
+  .phoneDis {
+    display: none;
+  }
+}
 .el-panel .panel {
   box-shadow: none;
   margin-bottom: 20px;

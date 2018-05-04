@@ -38,7 +38,7 @@ gulp.task('uglify', function () {
 });
 gulp.task('clean',function(){
     gulp
-        .src('./public/src/css/index.css')
+        .src('./public/src/css/*.css')
         .pipe(clean())
         .pipe(rename({
             suffix:'.min'

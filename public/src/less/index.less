@@ -59,13 +59,21 @@ li {
     padding: 10px 20px;
 }
 
-.navbar-brand {
-    padding: 24px 15px;
+.navbar-default .navbar-header {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    margin-right: 20px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
     color: @colorHoverBlue;
     background-color: #efefef;
+}
+
+@media all and (max-width:485px) {
+    .navbar-default .navbar-nav>li>a {
+        line-height: 18px;
+    }
 }
 
 //轮播
@@ -100,6 +108,12 @@ li {
         dd {
             color: @color999;
         }
+    }
+}
+
+@media all and (max-width:485px) {
+    .el-feature dl {
+        width: 100%;
     }
 }
 

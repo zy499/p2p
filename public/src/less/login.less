@@ -1,0 +1,164 @@
+//公共变量
+@colorWhite: #fff;
+@color999: #999;
+@font18: 18px;
+@font24: 24px;
+@font16: 16px;
+@colorHoverBlue: #00a8ff;
+//重置样式
+li {
+    list-style: none;
+}
+
+// 公共样式
+.cl {
+    clear: both;
+}
+
+.clear:after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+}
+
+.text-bule {
+    color: #31708f;
+}
+
+//顶部导航条
+.navbar-inverse .navbar-nav>li>a {
+    color: @colorWhite;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: @colorHoverBlue;
+    text-decoration: underline;
+}
+
+//顶部电话
+.navbar-inverse .navbar-brand {
+    color: @colorWhite;
+    font-size: @font18; // font-style: italic;
+    padding: 14px 15px;
+}
+
+.navbar-inverse .navbar-brand i {
+    font-size: @font24;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+//主导航条样式
+.login {
+    .navbar {
+        .container {
+            .navbar-header {
+                padding-top: 25px;
+                padding-bottom: 10px;
+                margin-right: 20px;
+                span {
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-left: 20px;
+                    color: #337ab7;
+                }
+            }
+        }
+    }
+}
+
+//中间内容
+.login {
+    .lg-content {
+        margin-top: 5px;
+        .panel {
+            border-color: #ddd;
+            .panel-heading {
+                color: #333;
+                background-color: #f5f5f5;
+                border-color: #ddd;
+            }
+            .panel-body {
+                padding: 15px;
+                form {
+                    width: 600px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 20px;
+                    #title-text {
+                        margin: 10px 10px 20px 110px;
+                        color: #999;
+                    }
+                    .form-group {
+                        margin-right: -15px;
+                        margin-left: -15px;
+                        margin-bottom: 15px;
+                        .col-sm-10 {
+                            .form-control {
+                                width: 220px; // display: inline;
+                                height: 34px;
+                                padding: 6px 12px;
+                                font-size: 14px;
+                                color: #555;
+                            }
+                        }
+                        .col-sm-offset-3 {
+                            padding-left: 15px;
+                            .btn:hover {
+                                color: #fff;
+                                background-color: #449d44;
+                                border-color: #398439
+                            }
+                            .btn {
+                                width: 100px;
+                                color: #fff;
+                                background-color: #5cb85c;
+                                border-color: #4cae4c;
+                                display: inline-block;
+                                padding: 6px 12px;
+                                margin-bottom: 0;
+                                font-size: 14px;
+                                cursor: pointer;
+                            }
+                            a {
+                                color: #337ab7;
+                                text-decoration: none;
+                            }
+                            a:hover {
+                                color: #23527c;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//页脚
+.el-footer {
+    background-color: #f8f8f8;
+    margin: 20px 0px 20px 0px;
+    padding-top: 30px;
+    .container {
+        .col-sm-2 {
+            div {
+                p {
+                    padding-bottom: 15px;
+                    font-size: 14px;
+                    padding-left: 10px;
+                }
+                a {
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

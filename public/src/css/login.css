@@ -4,6 +4,9 @@ li {
 .cl {
   clear: both;
 }
+.w100 {
+  width: 100px;
+}
 .clear:after {
   content: '';
   display: block;
@@ -88,7 +91,6 @@ li {
   border-color: #398439;
 }
 .login .lg-content .panel .panel-body form .form-group .col-sm-offset-3 .btn {
-  width: 100px;
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;

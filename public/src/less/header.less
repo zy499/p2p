@@ -1,0 +1,62 @@
+//公共变量
+@colorWhite: #fff;
+@color999: #999;
+@font18: 18px;
+@font24: 24px;
+@font16: 16px;
+@colorHoverBlue: #00a8ff;
+//重置样式
+li {
+    list-style: none;
+}
+
+// 公共样式
+.cl {
+    clear: both;
+}
+.w100 {
+    width: 100px;
+}
+.clear:after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+}
+
+.text-bule {
+    color: #31708f;
+}
+
+//顶部导航条
+.navbar-inverse .navbar-nav>li>a {
+    color: @colorWhite;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: @colorHoverBlue;
+    text-decoration: underline;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+
+//主导航条样式
+.login {
+    .navbar {
+        .container {
+            .navbar-header {
+                padding-top: 25px;
+                padding-bottom: 10px;
+                margin-right: 20px;
+                span {
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-left: 20px;
+                    color: #337ab7;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+li {
+  list-style: none;
+}
+.cl {
+  clear: both;
+}
+.w100 {
+  width: 100px;
+}
+.clear:after {
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+  clear: both;
+}
+.text-bule {
+  color: #31708f;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #00a8ff;
+  text-decoration: underline;
+}
+.navbar {
+  margin-bottom: 0px;
+}
+.login .navbar .container .navbar-header {
+  padding-top: 25px;
+  padding-bottom: 10px;
+  margin-right: 20px;
+}
+.login .navbar .container .navbar-header span {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 20px;
+  color: #337ab7;
+}

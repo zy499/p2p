@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- 视口 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>p2p首页</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
     <!-- 引入字体文件 -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="./dist/css/index.min.css">
+    <link rel="stylesheet" href="./dist/css/index.css">
 </head>
 
 <body>
@@ -41,29 +40,29 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">首页</a>
+                        <a href="#"><span class="fa fa-home"></span>首页</a>
                     </li>
                     <li>
-                        <a href="join.html">快速注册</a>
+                        <a href="join.html"><span class="fa fa-registered"></span>快速注册</a>
                     </li>
                     <li>
-                        <a href="login.html">登录</a>
+                        <a href="login.html"><span class="fa fa-sign-in-alt"></span>登录</a>
                     </li>
                     <li>
-                        <a href="#">帮助</a>
+                        <a href="#"><span class="fa fa-hands-helping">帮助</span></a>
                     </li>
-                    <li data-toggle="" data-html="true" title="<img src='./images/contract.png'>">
-                        <a href="#">联系客服</a>
+                    <li id="weixinTips" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<img src='./images/contract.png'>">
+                        <a href="#"><span class="fab fa-weixin"></span>联系客服</a>
                     </li>
                     <!-- 登录后显示 -->
                     <!-- <li>
-                        <a href="#">小强</a>
+                        <a href="#"><span class="fa fa-home"></span>小强</a>
                     </li>
                     <li>
-                        <a href="#">注销</a>
+                        <a href="#"><span class="fa fa-home"></span>注销</a>
                     </li>
                     <li>
-                        <a href="#">赶快充值</a>
+                        <a href="#"><span class="fa fa-home"></span>赶快充值</a>
                     </li> -->
                 </ul>
             </div>
@@ -408,6 +407,8 @@
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <!-- bootstrap js -->
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <script src="dist/js/p2pDispose.js"></script>
 </body>
 
 </html>

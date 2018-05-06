@@ -1,72 +1,83 @@
-var gulp = require('gulp');//引入gulp，管理插件由gulp开启任务
+//引入gulp模块
+var gulp = require('gulp');
+
 //引入路径模块
 var path = require("path");
-var uglify = require('gulp-uglify');//js压缩插件
-var rename = require('gulp-rename');//重命名插件
-var clean = require('gulp-clean-css');//css压缩
-var less = require('gulp-less');//less编译
-var livereload = require('gulp-livereload')//热刷新插件
+
+//引入Less插件模块
+var less = require('gulp-less');
+
+//引入Less插件模块
+var sass =require('gulp-sass');
+
 //引入资源地图模块
 var sourceMaps = require('gulp-sourcemaps');
-// 引入Less插件模块 
-var sass =require('gulp-sass');
-// var webserver = require('gulp-webserver');//浏览器自动打开能开启热刷新
-/* 
-    gulp开启任务 gulp.task('参数 任务名称',callback)
-    gulp可以链式操作
-*/
-gulp.task('less',function(){
-    gulp
-        .src('./public/src/less/*.less')
-        .pipe(less())
-        .pipe(gulp.dest('./public/src/css'))
-        .pipe(livereload())
-});
-gulp.task('sass',function(){
-    gulp
-        .src('./public/src/sass/*.sass')
-        .pipe(less())
-        .pipe(gulp.dest('./public/src/css'))
-        .pipe(livereload())
-});
-gulp.task('uglify', function () {
-    gulp
-        .src('./public/src/js/*.js')
-        .pipe(uglify())
-        .pipe(rename({
-            suffix:'.min'
-        }))
-        .pipe(gulp.dest('./public/dist/js'))
-        .pipe(livereload())
-});
-gulp.task('clean',function(){
-    gulp
-        .src('./public/src/css/*.css')
-        .pipe(clean())
-        .pipe(rename({
-            suffix:'.min'
-        }))
-        .pipe(gulp.dest('./public/dist/css'))
-        .pipe(livereload())
-})
 
-//热刷新插件可以开启服务器
-/* gulp.task('webserver',function(){
-    gulp
-        .src('./') // 服务器目录（./代表根目录）
-        .pipe(webserver({ // 运行gulp-webserver
-        livereload: true, // 启用LiveReload
-        open: true // 服务器启动时自动打开网页
-    }));
+//引入热刷新模块
+var liveReload = require('gulp-livereload');
 
-}) */
-gulp.task('default',function(){
-    livereload.listen()
-    gulp.watch('./public/src/**/*',['less','sass'])
-    gulp.watch('./public/src/css/*.css',['clean'])
-    gulp.watch('./public/src/js/*.js', ['uglify'])
-})
-/* 
-任务依赖，当前任务开启后，先运行依赖任务
-gulp.task('default',['webserver','watch']) 
-*/
+//引入压缩重命名插件模块
+var rename = require('gulp-rename');
+
+//引入压缩模块
+var cleanCss = require('gulp-clean-css');
+
+//引入删除模块
+var del = require("del");
+
+//------------------------开发阶段-------------------------------------------
+
+//配置less任务
+gulp.task("lessTask", function () {
+    // * 匹配任意数量的字符
+    gulp.src("./public/src/less/*.less") //设置源文件的路径
+        .pipe(sourceMaps.init()) //初始化资源地图
+        .pipe(less({
+            paths: [path.join(__dirname, 'less', 'includes')]
+        })) //调用插件的方法去编译less文件
+        .pipe(sourceMaps.write("./maps")) //写入资源地图
+        .pipe(gulp.dest("./public/dist/css/")) //设置输出文件夹
+        .pipe(liveReload()) //调用热刷新方法
+});
+
+//配置sass任务
+gulp.task("sassTask",function(){
+    // * 匹配任意数量的字符
+    gulp.src("./public/src/sass/*.scss") //设置源文件的路径
+        .pipe(sourceMaps.init()) //初始化资源地图
+        .pipe(sass().on('error', sass.logError)) //调用插件的方法去编译sass文件
+        .pipe(sourceMaps.write("./maps")) //写入资源地图
+        .pipe(gulp.dest("./public/dist/css/")) //设置输出文件夹
+        .pipe(liveReload()) //调用热刷新方法
+});
+
+//定义less+sass观察者任务
+gulp.task("watch", function () {
+    liveReload.listen(); //开启监听
+    gulp.watch("./public/src/**/*", ["lessTask","sassTask"]); //观察者，less+sass变化就执行编译,"sassTask"
+});
+
+//------------------------发布阶段-------------------------------------------
+
+//定义压缩css任务
+gulp.task("cssClean", function () {
+    // * 匹配任意数量的字符
+    gulp.src("./dist/css/*.css") //设置源文件的路径
+        .pipe(cleanCss()) //调用插件的方法去压缩CSS文件
+        .pipe(rename({
+            suffix: ".min"
+        }))
+        .pipe(gulp.dest("./dist/css/")) //设置输出文件夹
+});
+
+//配置一个删除垃圾文件的任务
+gulp.task("delTempTask", function () {
+    del("./temp").then(function () {
+        console.log("垃圾文件清除成功！！！！");
+    });
+});
+
+//串行任务： 网站发布时调用，在网站要上线的时候执行 gulp publishTask
+gulp.task("publishTask", function () {
+    sequence("cssClean", "delTempTask");
+});

@@ -1,4 +1,8 @@
 @import url("public.less");
+//提示工具图片的尺寸
+.tooltip-inner img{
+    width: 120px;
+}
 //顶部导航条
 .navbar-inverse .navbar-nav>li>a {
     color: @colorWhite;
@@ -25,6 +29,7 @@
 }
 
 //主导航条样式
+
 .navbar-default .navbar-nav>li>a {
     line-height: 60px;
     font-size: @font16;
@@ -40,4 +45,9 @@
 .navbar-default .navbar-nav>li>a:hover {
     color: @colorHoverBlue;
     background-color: #efefef;
+}
+@media all and (max-width:550px) {
+    .navbar-default .container #bs-example-navbar-collapse-1 .nav>li>a {
+        line-height: 18px;
+    }
 }

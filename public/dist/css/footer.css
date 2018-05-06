@@ -1,0 +1,15 @@
+.el-footer {
+  background-color: #f8f8f8;
+  margin: 20px 0px 20px 0px;
+  padding-top: 30px;
+}
+.el-footer .container .col-sm-2 div p {
+  padding-bottom: 15px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.el-footer .container .col-sm-2 div a img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=maps/footer.css.map */

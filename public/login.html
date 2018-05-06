@@ -16,10 +16,11 @@
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="./dist/css/login.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./dist/css/login-join.css">
 </head>
-<body class="login">
-    <!-- 页头导航条  start-->
+<body class="login-join">
+    <!-- 页头导航条 -->
     <nav class="navbar navbar-inverse">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,29 +39,29 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">首页</a>
+                        <a href="index.html"><span class="fa fa-home"></span>首页</a>
                     </li>
                     <li>
-                        <a href="join.html">快速注册</a>
+                        <a href="join.html"><span class="fa fa-registered"></span>快速注册</a>
                     </li>
                     <li>
-                        <a href="login.html">登录</a>
+                        <a href="login.html"><span class="fa fa-sign-in-alt"></span>登录</a>
                     </li>
                     <li>
-                        <a href="#">帮助</a>
+                        <a href="#"><span class="fa fa-hands-helping">帮助</span></a>
                     </li>
-                    <li data-toggle="" data-html="true" title="<img src='./images/contract.png'>">
-                        <a href="#">联系客服</a>
+                    <li id="weixinTips" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<img src='./images/contract.png'>">
+                        <a href="#"><span class="fab fa-weixin"></span>联系客服</a>
                     </li>
                     <!-- 登录后显示 -->
                     <!-- <li>
-                        <a href="#">小强</a>
+                        <a href="#"><span class="fa fa-home"></span>小强</a>
                     </li>
                     <li>
-                        <a href="#">注销</a>
+                        <a href="#"><span class="fa fa-home"></span>注销</a>
                     </li>
                     <li>
-                        <a href="#">赶快充值</a>
+                        <a href="#"><span class="fa fa-home"></span>赶快充值</a>
                     </li> -->
                 </ul>
             </div>
@@ -108,7 +109,7 @@
             <p class="panel-heading">用户登录</p>
             <!-- body -->
             <div class="panel-body">
-                <form id="registerFrom" class="form-horizontal el-login-form" action="" method="get">
+                <form id="loginFrom" class="form-horizontal el-login-form" action="" method="get">
                     <div class="form-group">
                         <div class="col-sm-4 col-xs-12 text-right">
                             <label for="username" class="control-label">用户名</label>
@@ -180,6 +181,6 @@
     <!-- 引入bootstrapValidator js -->
     <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
     <!-- 引入自定义脚本 -->
-    <script src="dist/js/p2pDispose.min.js"></script>
+    <script src="dist/js/p2pDispose.js"></script>
 </body>
 </html>

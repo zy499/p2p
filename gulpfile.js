@@ -20,21 +20,24 @@ gulp.task('less',function(){
         .src('./public/src/less/*.less')
         .pipe(less())
         .pipe(gulp.dest('./public/src/css'))
+        .pipe(livereload())
 });
 gulp.task('sass',function(){
     gulp
         .src('./public/src/sass/*.sass')
         .pipe(less())
         .pipe(gulp.dest('./public/src/css'))
+        .pipe(livereload())
 });
 gulp.task('uglify', function () {
     gulp
-        .src('./public/src/js/index.js')
+        .src('./public/src/js/*.js')
         .pipe(uglify())
         .pipe(rename({
             suffix:'.min'
         }))
         .pipe(gulp.dest('./public/dist/js'))
+        .pipe(livereload())
 });
 gulp.task('clean',function(){
     gulp
@@ -44,6 +47,7 @@ gulp.task('clean',function(){
             suffix:'.min'
         }))
         .pipe(gulp.dest('./public/dist/css'))
+        .pipe(livereload())
 })
 
 //热刷新插件可以开启服务器
@@ -57,8 +61,10 @@ gulp.task('clean',function(){
 
 }) */
 gulp.task('default',function(){
+    livereload.listen()
     gulp.watch('./public/src/**/*',['less','sass'])
     gulp.watch('./public/src/css/*.css',['clean'])
+    gulp.watch('./public/src/js/*.js', ['uglify'])
 })
 /* 
 任务依赖，当前任务开启后，先运行依赖任务

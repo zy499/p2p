@@ -4,15 +4,15 @@ li {
 .cl {
   clear: both;
 }
+.w100 {
+  width: 100px;
+}
 .clear:after {
   content: '';
   display: block;
   height: 0;
   width: 0;
   clear: both;
-}
-.text-bule {
-  color: #31708f;
 }
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;

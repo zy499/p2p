@@ -60,54 +60,6 @@ li {
 .login .lg-content .panel .panel-body {
   padding: 15px;
 }
-.login .lg-content .panel .panel-body form {
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
-.login .lg-content .panel .panel-body form #title-text {
-  margin: 10px 10px 20px 110px;
-  color: #999;
-}
-.login .lg-content .panel .panel-body form .form-group {
-  margin-right: -15px;
-  margin-left: -15px;
-  margin-bottom: 15px;
-}
-.login .lg-content .panel .panel-body form .form-group .col-sm-10 .form-control {
-  width: 220px;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  color: #555;
-}
-.login .lg-content .panel .panel-body form .form-group .col-sm-offset-3 {
-  padding-left: 15px;
-}
-.login .lg-content .panel .panel-body form .form-group .col-sm-offset-3 .btn:hover {
-  color: #fff;
-  background-color: #449d44;
-  border-color: #398439;
-}
-.login .lg-content .panel .panel-body form .form-group .col-sm-offset-3 .btn {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  cursor: pointer;
-}
-.login .lg-content .panel .panel-body form .form-group .col-sm-offset-3 a {
-  color: #337ab7;
-  text-decoration: none;
-}
-.login .lg-content .panel .panel-body form .form-group .col-sm-offset-3 a:hover {
-  color: #23527c;
-  text-decoration: underline;
-}
 .el-footer {
   background-color: #f8f8f8;
   margin: 20px 0px 20px 0px;

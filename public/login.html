@@ -15,8 +15,7 @@
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- <link rel="stylesheet" href="./dist/css/header.min.css">
-    <link rel="stylesheet" href="./dist/css/footer.min.css"> -->
+    <link rel="stylesheet" href="lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="./dist/css/login.min.css">
 </head>
 <body class="login">
@@ -32,35 +31,37 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone-alt"></span><i> 028-86261949</i></a>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">首页</a>
+                        <a href="#">首页</a>
                     </li>
                     <li>
-                        <a href="#">登录</a>
+                        <a href="join.html">快速注册</a>
                     </li>
                     <li>
-                        <a href="register.html">快速注册</a>
+                        <a href="login.html">登录</a>
                     </li>
                     <li>
                         <a href="#">帮助</a>
                     </li>
-                    <!-- <li>
+                    <li data-toggle="" data-html="true" title="<img src='./images/contract.png'>">
                         <a href="#">联系客服</a>
-                    </li> -->
+                    </li>
                     <!-- 登录后显示 -->
                     <!-- <li>
-                            <a href="#">小强</a>
-                        </li>
-                        <li>
-                            <a href="#">注销</a>
-                        </li>
-                        <li>
-                            <a href="#">赶快充值</a>
-                        </li> -->
+                        <a href="#">小强</a>
+                    </li>
+                    <li>
+                        <a href="#">注销</a>
+                    </li>
+                    <li>
+                        <a href="#">赶快充值</a>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -73,40 +74,63 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a href="#">
-                    <img src="images/logo.png" alt="">
-                </a>
-                <span>用户登录</span>
+                <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <a class="" href="#"><img src="images/logo.png" alt=""></a>
+                <div class="cl"></div>
             </div>
+
+            <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <!-- <li class="active"><a href="#">首页</a></li> -->
+                    <li><a href="#">我要投资</a></li>
+                    <li><a href="#">我要借款</a></li>
+                    <li><a href="#">个人中心</a></li>
+                    <li><a href="#">新手指引</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
     <!-- 主导航条 end -->
     <!-- 正文内容  start-->
+    <!-- 中间内容 -->
     <div class="container lg-content">
         <!-- title -->
         <div class="panel">
             <p class="panel-heading">用户登录</p>
             <!-- body -->
             <div class="panel-body">
-                <form class="form-horizontal el-login-form" action="" method="get">
-                    <p class="h4" id="title-text">请输入用户名和密码</p>
+                <form id="registerFrom" class="form-horizontal el-login-form" action="" method="get">
                     <div class="form-group">
-                        <label class="control-label col-sm-2">用户名</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text">
+                        <div class="col-sm-4 col-xs-12 text-right">
+                            <label for="username" class="control-label">用户名</label>
                         </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <input class="form-control" type="text" name="username" placeholder="请输入用户名" id="username">
+                        </div>
+                        <div class="col-sm-4 col-xs-12"></div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2">密&emsp;码</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text">
+                        <div class="col-sm-4 col-xs-12 text-right">
+                            <label for="password" class="control-label">密码</label>
                         </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <input class="form-control" type="password" name="password" placeholder="请输入密码" id="password">
+                        </div>
+                        <div class="col-sm-4 col-xs-12"></div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-3">
-                            <button class="btn btn-success w100">登录</button>
-                                      <a href="register.html">新用户，马上注册</a>
+                        <div class="col-sm-offset-4 col-sm-10">
+                            <button type="submit" class="btn btn-success">立即登录</button>
+                            <a href="join.html">新用户，马上注册</a>
                         </div>
                     </div>
                 </form>
@@ -153,5 +177,9 @@
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <!-- bootstrap js -->
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrapValidator js -->
+    <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <!-- 引入自定义脚本 -->
+    <script src="dist/js/p2pDispose.min.js"></script>
 </body>
 </html>

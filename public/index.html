@@ -42,10 +42,10 @@
                     <li>
                         <a href="#"><span class="fa fa-home"></span>首页</a>
                     </li>
-                    <li>
+                    <li id="_join">
                         <a href="join.html"><span class="fa fa-registered"></span>快速注册</a>
                     </li>
-                    <li>
+                    <li id="_login">
                         <a href="login.html"><span class="fa fa-sign-in-alt"></span>登录</a>
                     </li>
                     <li>
@@ -88,10 +88,10 @@
 
             <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">首页</a></li>
-                    <li><a href="#">我要投资</a></li>
-                    <li><a href="#">我要借款</a></li>
-                    <li><a href="#">个人中心</a></li>
+                    <li class="active"><a href="index.html">首页</a></li>
+                    <li><a href="invest.html">我要投资</a></li>
+                    <li><a href="borrow.html">我要借款</a></li>
+                    <li><a href="personal.html">个人中心</a></li>
                     <li><a href="#">新手指引</a></li>
                     <li><a href="#">关于我们</a></li>
                 </ul>
@@ -348,6 +348,7 @@
                             <a class="btn btn-link" href="#"> 更多资讯</a>
                         </div>
                     </div>
+                    <li onclick=""></li>
                     <!-- 列表 -->
                     <div class="el-new-list">
                         <ul>
@@ -375,6 +376,22 @@
             </div>
         </div>
     </div>
+<!-- 退出成功后Modal -->
+<div class="modal fade" id="isJoin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">用户退出登录提示</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
     <!-- 页脚 -->
     <div class="row el-footer">
         <div class="container">
@@ -409,6 +426,8 @@
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
     <script src="dist/js/p2pDispose.js"></script>
+    <!-- 用户登录显示用户名 -->
+    <script src="dist/js/indexName.js"></script>
 </body>
 
 </html>

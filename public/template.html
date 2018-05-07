@@ -9,16 +9,18 @@
     <title>p2p模板</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
-<link rel="stylesheet" href="lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <!-- bootstrapValidator css -->
+    <link rel="stylesheet" href="lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="./dist/css/template.min.css">
+    <link rel="stylesheet" href="./dist/css/template.css">
 </head>
-<body class="login">
+<body>
     <!-- 页头导航条 start-->
     <nav class="navbar navbar-inverse">
         <div class="container">
@@ -40,11 +42,25 @@
                     <li>
                         <a href="#"><span class="fa fa-home"></span>首页</a>
                     </li>
-                    <li>
+                    <!-- 登录后影藏 -->
+                    <!-- <li>
                         <a href="join.html"><span class="fa fa-registered"></span>快速注册</a>
                     </li>
                     <li>
                         <a href="login.html"><span class="fa fa-sign-in-alt"></span>登录</a>
+                    </li> -->
+                    <!-- 登录后显示 -->
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span>小强</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-share"></span>注销</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-jpy"></span>赶快充值</a>
                     </li>
                     <li>
                         <a href="#"><span class="fa fa-hands-helping">帮助</span></a>
@@ -52,16 +68,7 @@
                     <li id="weixinTips" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<img src='./images/contract.png'>">
                         <a href="#"><span class="fab fa-weixin"></span>联系客服</a>
                     </li>
-                    <!-- 登录后显示 -->
-                    <!-- <li>
-                        <a href="#"><span class="fa fa-home"></span>小强</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-home"></span>注销</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-home"></span>赶快充值</a>
-                    </li> -->
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,22 +77,40 @@
     </nav>
     <!-- 页头导航条 end -->
     <!-- 主导航条 start-->
+    <!-- 主导航条 -->
     <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a href="#">
-                    <img src="images/logo.png" alt="">
-                </a>
-                <span>用户登录</span>
+                <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <a class="" href="#"><img src="images/logo.png" alt=""></a>
+                <div class="cl"></div>
             </div>
+
+            <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">首页</a></li>
+                    <li><a href="invest.html">我要投资</a></li>
+                    <li><a href="borrow.html">我要借款</a></li>
+                    <li><a href="personal.html">个人中心</a></li>
+                    <li><a href="#">新手指引</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
     <!-- 主导航条 end -->
     <!-- 正文内容 start -->
 
-
+    <!-- 正文内容 end -->
     <!-- 页脚 start -->
     <div class="row el-footer">
         <div class="container">
@@ -125,5 +150,11 @@
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <!-- bootstrap js -->
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- bootstrapValidator -->
+    <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <!-- 引入自定义脚本 -->
+    <script src="./dist/js/p2pDispose.js"></script>
+    <!-- 引入表单验证配置js -->
+    <script src="./dist/js/p2pCheckForm.js"></script>
 </body>
 </html>

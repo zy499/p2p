@@ -67,6 +67,58 @@ li {
   font-size: 30px;
   color: red;
 }
+.el-borrow {
+  margin: 30px auto;
+}
+.el-borrow-item {
+  float: left;
+}
+.el-borrow-item .el-borrow-item-title {
+  font-size: 24px;
+  background-color: #ec7e20;
+  font-weight: 300;
+  line-height: 48px;
+  padding-left: 20px;
+  color: #FFFFFF;
+}
+.el-borrow-item .el-borrow-item-content {
+  background-color: #f9f9f9;
+  padding: 14px;
+  font-size: 16px;
+}
+.el-borrow-item .el-borrow-item-content a {
+  font-size: 13px;
+}
+.el-borrow-item .el-borrow-item-content .help-block {
+  font-size: 13px;
+}
+.el-borrow-item .el-borrow-item-content ul {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.el-borrow-item .el-borrow-item-content ul li {
+  color: #555;
+  font-size: 14px;
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+  background: url("../../images/sequare.png") left center no-repeat;
+}
+.el-borrow-item .el-borrow-item-content .el-borrow-apply {
+  border-radius: 20px;
+  background: #00a8ff;
+  color: #fff;
+  display: block;
+  margin: 0px auto;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.el-borrow-item .el-borrow-item-content .el-borrow-apply:HOVER {
+  background: #008fd9;
+  text-decoration: none;
+}
 .el-footer {
   background-color: #f8f8f8;
   margin: 20px 0px 20px 0px;
@@ -81,4 +133,4 @@ li {
   max-width: 100%;
 }
 
-/*# sourceMappingURL=maps/template.css.map */
+/*# sourceMappingURL=maps/borrow.css.map */

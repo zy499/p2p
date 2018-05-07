@@ -67,46 +67,83 @@ li {
   font-size: 30px;
   color: red;
 }
-@media all and (max-width: 550px) {
-  .navbar-default .navbar-nav > li > a {
-    line-height: 18px;
-  }
-}
-.login-join .lg-content {
+.hy-content {
   margin-top: 20px;
 }
-.login-join .lg-content .panel {
-  border-color: #ddd;
+#menu > li.active {
+  background: none;
+  border: 1px solid #ddd;
 }
-.login-join .lg-content .panel .panel-heading {
-  color: #333;
-  background-color: #f5f5f5;
-  border-color: #ddd;
+#menu > li.list-group-item {
+  padding: 0px;
 }
-.login-join .lg-content .panel .panel-body {
-  padding: 15px;
+#menu > li > a {
+  outline: none;
+  display: block;
+  padding: 10px 15px;
+  background: #F5F5F5;
+  text-decoration: none;
 }
-#joinModal {
-  overflow-y: scroll;
-  height: 800px;
+#menu > li:first-child > a {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
-#isJoin .modal-body .glyphicon {
-  font-size: 34px;
+#menu > li.active > a {
+  background: #337ab7;
+  color: #FFFFFF;
+  border-color: #337ab7;
 }
-#isJoin .modal-body .glyphicon-ok {
-  color: green;
+#menu > li > ul {
+  border-top: 1px solid #ddd;
+  padding-left: 0px;
+  list-style: none;
 }
-#isJoin .modal-body .glyphicon-remove {
-  color: red;
+#menu > li > ul > li {
+  height: 40px;
+  padding-left: 40px;
+  line-height: 40px;
 }
-#isJoin .modal-body #outNum {
-  font-size: 30px;
-  color: red;
+#menu > li > ul > li.active {
+  background-color: #337ab7;
 }
-@media all and (max-width: 768px) {
-  .container .panel-body form .text-right label {
-    float: left;
-  }
+#menu > li > ul > li.active a {
+  color: #fff;
+}
+.el-account .el-account-info {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 16px;
+}
+.el-account .el-account-info .el-head-img {
+  border: 1px solid #ddd;
+  padding: 10px;
+  float: left;
+}
+.el-account .el-account-info .el-head-img img {
+  height: 72px;
+  width: 72px;
+}
+.el-account .el-account-info .el-head {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+.el-account .el-accoun-auth {
+  padding: 40px 0px 0px 10px;
+}
+.el-account .el-accoun-auth h5 {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px 0px 10px 0px;
+}
+.el-account .el-accoun-auth .info {
+  font-size: 13px;
+  margin-top: 8px;
+}
+.el-account .el-accoun-auth .el-accoun-auth-left {
+  float: left;
+}
+.el-account .el-accoun-auth .el-accoun-auth-right {
+  float: left;
+  margin-left: 10px;
 }
 .el-footer {
   background-color: #f8f8f8;
@@ -122,4 +159,4 @@ li {
   max-width: 100%;
 }
 
-/*# sourceMappingURL=maps/login-join.css.map */
+/*# sourceMappingURL=maps/personal.css.map */

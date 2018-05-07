@@ -54,8 +54,20 @@ li {
     line-height: 18px;
   }
 }
+#isJoin .modal-body .glyphicon {
+  font-size: 34px;
+}
+#isJoin .modal-body .glyphicon-ok {
+  color: green;
+}
+#isJoin .modal-body .glyphicon-remove {
+  color: red;
+}
+#isJoin .modal-body #outNum {
+  font-size: 30px;
+  color: red;
+}
 .container-fuil .carousel {
-  margin-top: 8px;
   margin-bottom: 8px;
 }
 .el-feature {

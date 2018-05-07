@@ -67,6 +67,17 @@ li {
   font-size: 30px;
   color: red;
 }
+@media all and (max-width: 550px) {
+  .el-feature dl {
+    width: 100%;
+    height: 68px;
+  }
+}
+@media all and (max-width: 630px) {
+  .phoneDis {
+    display: none;
+  }
+}
 .el-footer {
   background-color: #f8f8f8;
   margin: 20px 0px 20px 0px;
@@ -81,4 +92,4 @@ li {
   max-width: 100%;
 }
 
-/*# sourceMappingURL=maps/template.css.map */
+/*# sourceMappingURL=maps/invest.css.map */

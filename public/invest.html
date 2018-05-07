@@ -6,21 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- 视口 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>p2p登录</title>
+    <title>p2p我要投资</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <!-- bootstrapValidator css -->
+    <link rel="stylesheet" href="lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./dist/css/login-join.css">
+    <link rel="stylesheet" href="./dist/css/invest.css">
 </head>
-<body class="login-join">
-    <!-- 页头导航条 -->
+<body>
+    <!-- 页头导航条 start-->
     <nav class="navbar navbar-inverse">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -41,11 +42,21 @@
                     <li>
                         <a href="index.html"><span class="fa fa-home"></span>首页</a>
                     </li>
-                    <li>
+                    <!-- 登录后影藏 -->
+                    <!-- <li>
                         <a href="join.html"><span class="fa fa-registered"></span>快速注册</a>
                     </li>
                     <li>
                         <a href="login.html"><span class="fa fa-sign-in-alt"></span>登录</a>
+                    </li> -->
+                    <!-- 登录后显示 -->
+                    <li>
+                        <a href="#" id="outUser">
+                            <span class="glyphicon glyphicon-share"></span>注销</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-jpy"></span>赶快充值</a>
                     </li>
                     <li>
                         <a href="#"><span class="fa fa-hands-helping">帮助</span></a>
@@ -53,16 +64,7 @@
                     <li id="weixinTips" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<img src='./images/contract.png'>">
                         <a href="#"><span class="fab fa-weixin"></span>联系客服</a>
                     </li>
-                    <!-- 登录后显示 -->
-                    <!-- <li>
-                        <a href="#"><span class="fa fa-home"></span>小强</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-home"></span>注销</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-home"></span>赶快充值</a>
-                    </li> -->
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,7 +72,7 @@
         <!-- /.container-fluid -->
     </nav>
     <!-- 页头导航条 end -->
-    <!-- 主导航条  start-->
+    <!-- 主导航条 start-->
     <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -89,7 +91,7 @@
             <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="invest.html">我要投资</a></li>
+                    <li class="active"><a href="invest.html">我要投资</a></li>
                     <li><a href="borrow.html">我要借款</a></li>
                     <li><a href="personal.html">个人中心</a></li>
                     <li><a href="#">新手指引</a></li>
@@ -101,44 +103,101 @@
         <!-- /.container-fluid -->
     </nav>
     <!-- 主导航条 end -->
-    <!-- 正文内容  start-->
-    <div class="container lg-content">
-        <!-- title -->
-        <div class="panel">
-            <p class="panel-heading">用户登录</p>
-            <!-- body -->
-            <div class="panel-body">
-                <form id="loginFrom" class="form-horizontal el-login-form" action="" method="">
-                    <div class="form-group">
-                        <div class="col-sm-4 col-xs-12 text-right">
-                            <label for="username" class="control-label">用户名</label>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <input class="form-control" type="text" name="username" placeholder="请输入用户名" id="username">
-                        </div>
-                        <div class="col-sm-4 col-xs-12"></div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-xs-12 text-right">
-                            <label for="password" class="control-label">密码</label>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <input class="form-control" type="password" name="password" placeholder="请输入密码" id="password">
-                        </div>
-                        <div class="col-sm-4 col-xs-12"></div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-4 col-sm-10">
-                            <button type="submit" class="btn btn-success">立即登录</button>
-                            <a href="join.html">新用户，马上注册</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!-- 正文内容 start -->
+    <div class="container">
+		<h4 class="page-title">投资列表</h4>
+		<form action="invest_list.html" id="searchForm">
+			<div style="margin: 20px 0px;">
+					<span class="text-muted">标的状态</span><div style="margin-left: 30px" class="btn-group" data-toggle="buttons">
+				  <label class="btn btn-default active">
+				    <input type="radio" name="bidRequestState" value="-1" autocomplete="off" checked=""> 全部 
+				  </label>
+				  <label class="btn btn-default">
+				    <input type="radio" name="bidRequestState" value="2" autocomplete="off"> 招标中 
+				  </label>
+				  <label class="btn btn-default">
+				    <input type="radio" name="bidRequestState" value="8" autocomplete="off"> 还款中 
+				  </label>
+				</div>
+			</div>
+		</form>
+		<table class="table el-table table-hover">
+			<thead id="gridHead">
+				<tr>
+					<th>借款人</th>
+					<th class="phoneDis">借款标题</th>
+					<th>年利率</th>
+					<th>金额</th>
+					<th>还款方式</th>
+					<th>进度</th>
+					<th class="phoneDis">操作</th>
+				</tr>
+			</thead>
+			<tbody id="gridBody">
+			<tr>
+				<td>zs</td>
+				<td class="phoneDis">给我2000度过难关</td>
+				<td class="text-info"> 10.00%
+				</td>
+				<td class="text-info">2,000.00</td>
+				<td class="phoneDis">
+					按月分期还款
+				</td>
+				<td>
+					100.00%
+				</td>
+				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
+			</tr>
+            <tr>
+				<td>zs</td>
+				<td class="phoneDis">给我2000度过难关</td>
+				<td class="text-info"> 10.00%
+				</td>
+				<td class="text-info">2,000.00</td>
+				<td class="phoneDis">
+					按月分期还款
+				</td>
+				<td>
+					100.00%
+				</td>
+				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
+			</tr>
+            <tr>
+				<td>zs</td>
+				<td class="phoneDis">给我2000度过难关</td>
+				<td class="text-info"> 10.00%
+				</td>
+				<td class="text-info">2,000.00</td>
+				<td class="phoneDis">
+					按月分期还款
+				</td>
+				<td>
+					100.00%
+				</td>
+				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
+			</tr>
+            <tr>
+				<td>zs</td>
+				<td class="phoneDis">给我2000度过难关</td>
+				<td class="text-info"> 10.00%
+				</td>
+				<td class="text-info">2,000.00</td>
+				<td class="phoneDis">
+					按月分期还款
+				</td>
+				<td>
+					100.00%
+				</td>
+				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
+			</tr>
+			</tbody>
+		</table>
+		<div style="text-align: center;">
+			<ul id="pagination" class="pagination"></ul>
+		</div>
+	</div>
     <!-- 正文内容 end -->
-    <!-- 登录成功后Modal -->
+    <!-- 退出成功后Modal -->
     <div class="modal fade" id="isJoin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -146,7 +205,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">用户登录提示</h4>
+                    <h4 class="modal-title" id="myModalLabel">用户退出登录提示</h4>
                 </div>
                 <div class="modal-body">
                     
@@ -154,7 +213,7 @@
             </div>
         </div>
     </div>
-    <!-- 页脚  start-->
+    <!-- 页脚 start -->
     <div class="row el-footer">
         <div class="container">
             <div class="col-sm-8">
@@ -193,11 +252,15 @@
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <!-- bootstrap js -->
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- 引入bootstrapValidator js -->
+    <!-- bootstrapValidator -->
     <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
-    <!-- 引入自定义脚本 -->
-    <script src="./dist/js/p2pDispose.js"></script>
-    <!-- 引入表单验证配置js -->
-    <script src="./dist/js/p2pCheckForm.js"></script>
+    <!-- 自定义脚本 -->
+    <script src="dist/js/p2pDispose.js"></script>
+    <!-- 用户cookie -->
+    <script src="dist/js/checkUser.js"></script>
+    <!-- 退出登录 -->
+    <script src="dist/js/outUser.js"></script>
+<!-- 用户登录显示用户名 -->
+<script src="dist/js/disName.js"></script>
 </body>
 </html>

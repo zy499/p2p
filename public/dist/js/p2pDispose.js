@@ -68,6 +68,13 @@ $(function () {
                         message: '电子邮箱格式不正确，正确格式：abc@126.com'
                     }
                 }
+            },
+            'join[]': {
+                validators: {
+                    notEmpty: {
+                        message: '请同意用户注册协议!'
+                    }
+                }
             }
         }
     })

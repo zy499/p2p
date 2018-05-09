@@ -49,7 +49,7 @@ li {
   color: #00a8ff;
   background-color: #efefef;
 }
-@media all and (max-width: 550px) {
+@media all and (max-width: 770px) {
   .navbar-default .container #bs-example-navbar-collapse-1 .nav > li > a {
     line-height: 18px;
   }

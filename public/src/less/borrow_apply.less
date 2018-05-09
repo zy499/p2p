@@ -1,0 +1,80 @@
+@import url('header.less');
+//正文
+.member {
+    margin-top: 8px;
+}
+.panel-default {
+    padding: 5px;
+}
+//左侧列表组样式
+.panel-group {
+    margin-bottom: 6px;
+}
+//左侧菜单的选中样式定义
+.list-group .active a {
+    color: @colorWhite;
+}
+.page-header {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.clear {
+    clear: both;
+}
+#auth_icon {
+    margin: 20px 0;
+}
+.lead {
+    font-weight: bold;
+}
+//大屏下的收齐展开按钮
+#toggleBtn {
+    position: relative;
+    top: -15px;
+    left: -15px;
+    display: none;
+}
+.el-borrow-form-tip {
+    width: 300px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 20px #ddd;
+    padding: 20px 30px;
+    position: absolute;
+    top: 22%;
+    right: 5%;
+}
+@media all and (max-width:992px) {
+    .el-borrow-form-tip {
+        position: static;
+    }
+}
+//屏幕在768以下时正文样式
+@media all and (max-width:768px) {
+    #memberMain {
+        position: relative;
+        left: 0;
+        height: 1250px;
+        transition: all 0.2s linear;
+    }
+    #memberMain.active {
+        left: -54%;
+    }
+    #rightCon {
+        position: absolute;
+        right: -50%;
+    }
+    //去掉横向滚动条
+    body{
+        overflow-x: hidden;
+    }
+
+    //小屏时切换按钮显示
+    #toggleBtn{
+        display: block;
+    }
+}
+
+
+@import url('footer.less');

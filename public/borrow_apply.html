@@ -19,6 +19,12 @@
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- 
+        bootstarpDate cdn
+        <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js"></script>  
+        <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">  
+        <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script> 
+     -->
     <link rel="stylesheet" href="./dist/css/borrow_apply.css">
 </head>
 
@@ -177,10 +183,10 @@
                             aria-expanded="true">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <a href="memberCenter.html">账户信息</a>
+                                    <a href="personal.html">账户信息</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="realAuth.html">实名认证</a>
+                                    <a href="#">实名认证</a>
                                 </li>
                                 <li class="list-group-item">
                                     <a href="#">银行卡管理</a>
@@ -261,24 +267,31 @@
                             </div>
                             <div class="page-header lead col-sm-10 col-xs-12"></div>
                         </div>
-                        <form class="form-horizontal el-borrow-form" novalidate="novalidate" method="post" action="${pageContext.request.contextPath}/borrow_normal.do">
+                        <form class="form-horizontal el-borrow-form" id="borrowForm">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    借款人
+                                </label>
+                                <div class="col-sm-3  input-group">
+                                    <input id="borrowPerson" class="form-control" name="borrowPerson" readonly>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
                                     借款方式
                                 </label>
                                 <div class="col-sm-3  input-group">
-                                    <select class="form-control">
-                                        <option>请选择贷款方式</option>
-                                        <option>信用贷</option>
-                                        <option>车易贷</option>
-                                        <option>房易贷</option>
+                                    <select class="form-control" name="borrowType">
+                                        <option value="1">信用贷</option>
+                                        <option value="2">车易贷</option>
+                                        <option value="3">房易贷</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">  
                                 <label class="col-sm-3 control-label">选择日期</label>  
                                 <div class="col-sm-3 input-group date" id='date1'>  
-                                    <input type="text" class="form-control">  
+                                    <input type="text" class="form-control" name="borrowDate">  
                                     <a class="input-group-addon">  
                                         <i class="glyphicon glyphicon-calendar"></i>  
                                     </a>  
@@ -324,11 +337,11 @@
                                     还款方式
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" value="0" checked="checked" name="inlineRadioOptions">
+                                    <input type="radio" value="按月分期" checked="checked" name="repayment">
                                     按月分期
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" value="1" name="inlineRadioOptions">
+                                    <input type="radio" value="按月到期" name="repayment">
                                     按月到期
                                 </label>
                             </div>
@@ -352,7 +365,6 @@
                                     <span class="input-group-addon">%</span>
                                 </div>
                             </div>
-                            <!--
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
                                     最大投标
@@ -362,7 +374,6 @@
                                     <span class="input-group-addon">元</span>
                                 </div>
                             </div>
-                            -->
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
                                     招标天数
@@ -402,7 +413,7 @@
                                 </div>
                             </div>
                             <div class="form-group text-center">
-                                <button class="btn btn-primary" type="submit" data-loading-text="提交">
+                                <button id="borrowBtn" class="btn btn-primary" type="button">
                                     提交申请
                                 </button>
                             </div>
@@ -442,6 +453,22 @@
                 </div>
                 <div class="modal-body">
 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 注册成功后Modal -->
+    <div class="modal fade" id="isJoin2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">用户申请提示</h4>
+                </div>
+                <div class="modal-body">
+                    
                 </div>
             </div>
         </div>
@@ -487,10 +514,12 @@
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- bootstrapValidator -->
     <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <!-- bootstrap 时间控件 -->
     <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js"></script>  
     <script src="lib/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>  
     <!-- 自定义脚本 -->
     <script src="dist/js/p2pDispose.js"></script>
+    <!-- <script src="dist/js/p2pCheckForm.js"></script> -->
     <!-- 时间控件配置 -->
     <script src="dist/js/dateimepicker.js"></script>
     <!-- 用户cookie -->

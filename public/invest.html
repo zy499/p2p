@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-<!-- 视口 -->
-<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <!-- 视口 -->
+    <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>p2p我要投资</title>
     <!-- bootstrap css -->
@@ -17,8 +18,11 @@
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!--2）引入分页插件的css-->
+    <link rel="stylesheet" type="text/css" href="lib/JqueryPagination/jquery.pagination.css" />
     <link rel="stylesheet" href="./dist/css/invest.css">
 </head>
+
 <body>
     <!-- 页头导航条 start-->
     <nav class="navbar navbar-inverse">
@@ -32,14 +36,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone-alt"></span><i> 028-86261949</i></a>
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-phone-alt"></span>
+                    <i> 028-86261949</i>
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html"><span class="fa fa-home"></span>首页</a>
+                        <a href="index.html">
+                            <span class="fa fa-home"></span>首页</a>
                     </li>
                     <!-- 登录后影藏 -->
                     <!-- <li>
@@ -58,12 +66,15 @@
                             <span class="glyphicon glyphicon-jpy"></span>赶快充值</a>
                     </li>
                     <li>
-                        <a href="#"><span class="fa fa-hands-helping">帮助</span></a>
+                        <a href="#">
+                            <span class="fa fa-hands-helping">帮助</span>
+                        </a>
                     </li>
                     <li id="weixinTips" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<img src='./images/contract.png'>">
-                        <a href="#"><span class="fab fa-weixin"></span>联系客服</a>
+                        <a href="#">
+                            <span class="fab fa-weixin"></span>联系客服</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -83,18 +94,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button> -->
-                <a class="" href="#"><img src="images/logo.png" alt=""></a>
+                <a class="" href="#">
+                    <img src="images/logo.png" alt="">
+                </a>
                 <div class="cl"></div>
             </div>
 
             <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">首页</a></li>
-                    <li class="active"><a href="invest.html">我要投资</a></li>
-                    <li><a href="borrow.html">我要借款</a></li>
-                    <li><a href="personal.html">个人中心</a></li>
-                    <li><a href="#">新手指引</a></li>
-                    <li><a href="#">关于我们</a></li>
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li class="active">
+                        <a href="invest.html">我要投资</a>
+                    </li>
+                    <li>
+                        <a href="borrow.html">我要借款</a>
+                    </li>
+                    <li>
+                        <a href="personal.html">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="#">新手指引</a>
+                    </li>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -104,97 +129,46 @@
     <!-- 主导航条 end -->
     <!-- 正文内容 start -->
     <div class="container">
-		<h4 class="page-title">投资列表</h4>
-		<form action="invest_list.html" id="searchForm">
-			<div style="margin: 20px 0px;">
-					<span class="text-muted">标的状态</span><div style="margin-left: 30px" class="btn-group" data-toggle="buttons">
-				  <label class="btn btn-default active">
-				    <input type="radio" name="bidRequestState" value="-1" autocomplete="off" checked=""> 全部 
-				  </label>
-				  <label class="btn btn-default">
-				    <input type="radio" name="bidRequestState" value="2" autocomplete="off"> 招标中 
-				  </label>
-				  <label class="btn btn-default">
-				    <input type="radio" name="bidRequestState" value="8" autocomplete="off"> 还款中 
-				  </label>
-				</div>
-			</div>
-		</form>
-		<table class="table el-table table-hover">
-			<thead id="gridHead">
-				<tr>
-					<th>借款人</th>
-					<th class="phoneDis">借款标题</th>
-					<th>年利率</th>
-					<th>金额</th>
-					<th>还款方式</th>
-					<th>进度</th>
-					<th class="phoneDis">操作</th>
-				</tr>
-			</thead>
-			<tbody id="gridBody">
-			<tr>
-				<td>zs</td>
-				<td class="phoneDis">给我2000度过难关</td>
-				<td class="text-info"> 10.00%
-				</td>
-				<td class="text-info">2,000.00</td>
-				<td class="phoneDis">
-					按月分期还款
-				</td>
-				<td>
-					100.00%
-				</td>
-				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
-			</tr>
-            <tr>
-				<td>zs</td>
-				<td class="phoneDis">给我2000度过难关</td>
-				<td class="text-info"> 10.00%
-				</td>
-				<td class="text-info">2,000.00</td>
-				<td class="phoneDis">
-					按月分期还款
-				</td>
-				<td>
-					100.00%
-				</td>
-				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
-			</tr>
-            <tr>
-				<td>zs</td>
-				<td class="phoneDis">给我2000度过难关</td>
-				<td class="text-info"> 10.00%
-				</td>
-				<td class="text-info">2,000.00</td>
-				<td class="phoneDis">
-					按月分期还款
-				</td>
-				<td>
-					100.00%
-				</td>
-				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
-			</tr>
-            <tr>
-				<td>zs</td>
-				<td class="phoneDis">给我2000度过难关</td>
-				<td class="text-info"> 10.00%
-				</td>
-				<td class="text-info">2,000.00</td>
-				<td class="phoneDis">
-					按月分期还款
-				</td>
-				<td>
-					100.00%
-				</td>
-				<td><a class="btn btn-danger btn-sm" href="borrow_info.html?id=7">查看</a></td>
-			</tr>
-			</tbody>
-		</table>
-		<div style="text-align: center;">
-			<ul id="pagination" class="pagination"></ul>
-		</div>
-	</div>
+        <h4 class="page-title">投资列表</h4>
+        <form action="invest_list.html" id="searchForm">
+            <div style="margin: 20px 0px;">
+                <span class="text-muted">标的状态</span>
+                <div style="margin-left: 30px" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                        <input type="radio" name="bidRequestState" value="-1" autocomplete="off" checked=""> 全部
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="bidRequestState" value="2" autocomplete="off"> 招标中
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="bidRequestState" value="8" autocomplete="off"> 还款中
+                    </label>
+                </div>
+            </div>
+        </form>
+        <table class="table el-table table-hover">
+            <thead id="investHead">
+                <tr>
+                    <th>借款人</th>
+                    <th class="phoneDis">借款标题</th>
+                    <th>年利率</th>
+                    <th>金额</th>
+                    <th>还款方式</th>
+                    <th>进度</th>
+                    <th class="phoneDis">操作</th>
+                </tr>
+            </thead>
+            <tbody id="investdBody">
+
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <section id="demo">
+                <div id="page" class="m-pagination"></div>
+                <!-- <div id="eventLog"></div> -->
+            </section>
+        </div>
+    </div>
     <!-- 正文内容 end -->
     <!-- 退出成功后Modal -->
     <div class="modal fade" id="isJoin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -207,7 +181,7 @@
                     <h4 class="modal-title" id="myModalLabel">用户退出登录提示</h4>
                 </div>
                 <div class="modal-body">
-                    
+
                 </div>
             </div>
         </div>
@@ -247,6 +221,21 @@
         </div>
     </div>
     <!-- 页脚 end -->
+    <script id="investTmpl" type="text/html">
+        {{each list as v i}}
+        <tr>
+            <td>{{v.borrowPerson}}</td>
+            <td class="phoneDis">{{v.borrowTitle}}</td>
+            <td class="text-info">{{v.borrowRate}}%</td>
+            <td class="text-info">{{v.borrowMoney}}元</td>
+            <td class="phoneDis">{{v.repayment}}</td>
+            <td>{{v.investMoney}}%</td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="borrow_info.html?id=+{{v._id}}">查看</a>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
     <!-- jq引入 -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <!-- bootstrap js -->
@@ -259,7 +248,39 @@
     <script src="dist/js/checkUser.js"></script>
     <!-- 退出登录 -->
     <script src="dist/js/outUser.js"></script>
-<!-- 用户登录显示用户名 -->
-<script src="dist/js/disName.js"></script>
+    <!-- 用户登录显示用户名 -->
+    <script src="dist/js/disName.js"></script>
+    <!-- artTemplate -->
+    <script src="lib/artTemplate/template.js"></script>
+    <script src="lib/JqueryPagination/jquery.pagination-1.2.7.min.js"></script>
+    <!-- 显示投资列表 -->
+    <!-- <script src="dist/js/investList.js"></script> -->
+    <script>
+        $("#page").page({
+            debug: true,
+            showInfo: true,
+            showJump: true,
+            showPageSizes: true,
+            pageSize: 5,
+            remote: {
+                url: '/borrow/investList',
+                success: function (data) {
+                    // console.log(data);
+                    var htmlStr = template('investTmpl', data);
+                    // console.log(htmlStr);
+                    $('#investdBody').html(htmlStr);
+                }
+            }
+        });
+
+        $("#page").on("pageClicked", function (event, pageIndex) {
+            // $("#eventLog").append('EventName = pageClicked , pageIndex = ' + pageIndex + '<br />');
+        }).on('jumpClicked', function (event, pageIndex) {
+            // $("#eventLog").append('EventName = jumpClicked , pageIndex = ' + pageIndex + '<br />');
+        }).on('pageSizeChanged', function (event, pageSize) {
+            // $("#eventLog").append('EventName = pageSizeChanged , pageSize = ' + pageSize + '<br />');
+        });
+    </script>
 </body>
+
 </html>

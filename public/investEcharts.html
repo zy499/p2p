@@ -201,104 +201,8 @@
 			<div id="rightCon" class="col-sm-9 col-xs-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<button id="toggleBtn" class="btn btn-primary btn-xs">展开</button>
-						<div class="row clear">
-							<div class="pull-left col-sm-2 col-xs-12 text-center">
-								<img id="head_icon" class="img-thumbnail" src="images/head_icon.jpg" />
-							</div>
-							<div class="pull-left col-sm-10 col-xs-12">
-								<p>昵&emsp;称：源代码教育</p>
-								<p>用户名：小强</p>
-								<p>最后登录：2016-10-25 15:30:10</p>
-							</div>
-						</div>
-						<div class="row" id="money">
-							<div class="col-sm-4">
-								总金额：<span class="text-primary">10000元</span>
-							</div>
-							<div class="col-sm-4">
-								可用金额：<span class="text-primary">8000元</span>
-							</div>
-							<div class="col-sm-4">
-								冻结金额：<span class="text-primary">2000元</span>
-							</div>
-						</div>
-						<div class="row text-center">
-							<a class="btn btn-primary btn-lg" href="recharge.html">账户充值</a>
-							<a class="btn btn-danger btn-lg" href="moneyWithdraw_apply.html">账户提现</a>
-						</div>
-						<!--图标的排列-->
-						<div class="row" id="auth_icon">
-							<div class="col-sm-6">
-								<div class="el-accoun-auth">
-									<div class="pull-left">
-										<img src="images/shiming.png" />
-									</div>
-									<div class="pull-left">
-										<h5>实名认证</h5>
-										<p>
-											<!--
-                                                已认证
-                                                <a href="realAuth.html">查看</a>
-                                            -->
-											未认证
-											<a href="realAuth.html">马上认证</a>
-
-										</p>
-									</div>
-									<div class="clear"></div>
-									<p class="info">实名认证之后才能在平台投资</p>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="el-accoun-auth">
-									<div class="pull-left">
-										<img src="images/shouji.jpg" />
-									</div>
-									<div class="pull-left">
-										<h5>手机认证</h5>
-										<p>
-											已认证
-											<a href="#">查看</a>
-										</p>
-									</div>
-									<div class="clear"></div>
-									<p class="info">可以收到系统操作信息,并增加使用安全性</p>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="el-accoun-auth">
-									<div class="pull-left">
-										<img src="images/youxiang.jpg" />
-									</div>
-									<div class="pull-left">
-										<h5>邮箱认证</h5>
-										<p>
-											已认证
-											<a href="#">查看</a>
-										</p>
-									</div>
-									<div class="clear"></div>
-									<p class="info">您可以设置邮箱来接收重要信息</p>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="el-accoun-auth">
-									<div class="pull-left">
-										<img src="images/baozhan.jpg" />
-									</div>
-									<div class="pull-left">
-										<h5>VIP会员</h5>
-										<p>
-											普通用户
-											<a href="#">查看</a>
-										</p>
-									</div>
-									<div class="clear"></div>
-									<p class="info">VIP会员，让你更快捷的投资</p>
-								</div>
-							</div>
-						</div>
+						<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    					<div id="main" style="height:400px"></div>
 					</div>
 				</div>
 			</div>
@@ -369,6 +273,78 @@
     <!-- 退出登录 -->
     <script src="dist/js/outUser.js"></script>
     <!-- 用户登录显示用户名 -->
-    <script src="dist/js/disName.js"></script>
+	<script src="dist/js/disName.js"></script>
+	<!-- echarts -->
+	<script src="lib/echarts/echarts-all.js"></script>
+	<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init(document.getElementById('main')); 
+        
+       	var option = {
+			title : {
+                text: '蓝源P2P用户借款类型统计',
+                subtext: '2018-05',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient : 'vertical',
+                x : 'left',
+                data:['信用贷','车易贷','房易贷']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {
+                        show: true,
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                width: '50%',
+                                funnelAlign: 'left',
+                                max: 1548
+                            }
+                        }
+                    },
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series : [
+                {
+                    name:'蓝源P2P用户借款类型统计',
+                    type:'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    data:[]
+                }
+            ]
+		};
+        // 为echarts对象加载数据 
+		myChart.setOption(option); 
+		$.ajax({
+			url:'/borrow/getInvestType',
+			success:function(data){
+				// console.log(data);
+				/* 
+				data:[
+                {value:335, name:'直接访问'},
+            	]
+				*/
+				option.series[0].data=data;
+				//关闭loading加载动画
+				myChart.hideLoading();
+				// 为echarts对象加载数据 
+				myChart.setOption(option);
+			}
+		})
+    </script>
 </body>
 </html>

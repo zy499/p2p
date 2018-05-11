@@ -7,5 +7,6 @@ $(function () {
         $('.navbar-right').append(htmlStr);
         $('#_login').remove();
         $('#_join').remove();
+        $('#borrowPerson').val(username);
     });
 });

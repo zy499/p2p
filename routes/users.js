@@ -47,10 +47,17 @@ router.post('/join',(req,res)=>{
           if (err) {
             console.error("注册失败！" + err.message);
           } else {
-            res.json({
-              'isSuccess': true,
-              'message': '注册成功！'
-            })
+            if (data.length > 0) {
+              res.json({
+                'isSucess': false,
+                'message': '注册失败!'
+              });
+            }else{
+              res.json({
+                'isSuccess': true,
+                'message': '注册成功！'
+              });
+            }
           }
         });
     }else{
@@ -64,12 +71,17 @@ router.post('/isName',(req,res)=>{
   var userObj = {username}
   // console.log(username);
   usersModel.find(userObj,(err,data)=>{
-    console.log(data);
+    // console.log(data);
     if(!err){
       if(data.length > 0){
         res.json({
           'isSuccess': false,
           'message': '用户名已经存在!'
+        })
+      }else{
+        res.json({
+          'isSuccess': true,
+          'message': '用户名可以注册!'
         })
       }
     }else{

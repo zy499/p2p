@@ -67,6 +67,19 @@ li {
   font-size: 30px;
   color: red;
 }
+#isJoin2 .modal-body .glyphicon {
+  font-size: 34px;
+}
+#isJoin2 .modal-body .glyphicon-ok {
+  color: green;
+}
+#isJoin2 .modal-body .glyphicon-remove {
+  color: red;
+}
+#isJoin2 .modal-body #outNum {
+  font-size: 30px;
+  color: red;
+}
 .member {
   margin-top: 8px;
 }

@@ -296,20 +296,6 @@
     <script src="./dist/js/p2pDispose.js"></script>
     <!-- 引入表单验证配置js -->
     <script src="./dist/js/p2pCheckForm.js"></script>
-    <script>
-        $('#username').on('blur',()=>{
-            // alert(1);
-            var username = $('#username').val();
-            $.post('/users/isName','username='+username,(data)=>{
-                // console.log(data);
-                if(!data.success){
-                    let htmlStr ='<span class="glyphicon glyphicon-remove"></span>对不起，用户名已存在!';
-                    $('#isJoin .modal-body').html(htmlStr);
-                    //显示模态框
-                    $('#isJoin').modal('show');
-                }
-            })
-        });
-    </script>
+    <script src="./dist/js/isName.js"></script>
 </body>
 </html>
